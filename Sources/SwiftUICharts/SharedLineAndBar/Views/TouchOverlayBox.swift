@@ -27,24 +27,27 @@ internal struct TouchOverlayBox<T: CTChartData>: View {
     
     internal var body: some View {
         Group {
-if chartData.chartStyle.infoBoxContentAlignment == .vertical {
-    VStack(alignment: .leading, spacing: 0) {
-        ForEach(chartData.infoView.touchOverlayInfo, id: \.id) { point in
-            Text("Validation Issue Trends")
-            HStack {
-                chartData.infoLegend(info: point)
-                    .foregroundColor(chartData.chartStyle.infoBoxDescriptionColour)
-                Text("-") // You can adjust this as needed to get the dash you want
-                chartData.infoValueUnit(info: point)
-                    .font(chartData.chartStyle.infoBoxValueFont)
-                    .foregroundColor(chartData.chartStyle.infoBoxValueColour)
-            }
-            //chartData.infoDescription(info: point)
-                //.font(chartData.chartStyle.infoBoxDescriptionFont)
-                //.foregroundColor(chartData.chartStyle.infoBoxDescriptionColour)
-        }
-    }
-
+            if chartData.chartStyle.infoBoxContentAlignment == .vertical {
+                VStack(alignment: .leading, spacing: 0) {
+                    HStack {
+                        Spacer()
+                        Text("Validation Issues")
+                        Spacer()
+                    }
+                    ForEach(chartData.infoView.touchOverlayInfo, id: \.id) { point in
+                        HStack {
+                            chartData.infoLegend(info: point)
+                                .foregroundColor(chartData.chartStyle.infoBoxDescriptionColour)
+                            Text("-") // You can adjust this as needed to get the dash you want
+                            chartData.infoValueUnit(info: point)
+                                .font(chartData.chartStyle.infoBoxValueFont)
+                                .foregroundColor(chartData.chartStyle.infoBoxValueColour)
+                        }
+                        //chartData.infoDescription(info: point)
+                            //.font(chartData.chartStyle.infoBoxDescriptionFont)
+                            //.foregroundColor(chartData.chartStyle.infoBoxDescriptionColour)
+                    }
+                }
             } else {
                 HStack {
                     ForEach(chartData.infoView.touchOverlayInfo, id: \.id) { point in
