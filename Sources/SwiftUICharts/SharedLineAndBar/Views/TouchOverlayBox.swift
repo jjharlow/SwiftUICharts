@@ -35,9 +35,9 @@ internal struct TouchOverlayBox<T: CTChartData>: View {
                         chartData.infoValueUnit(info: point)
                             .font(chartData.chartStyle.infoBoxValueFont)
                             .foregroundColor(chartData.chartStyle.infoBoxValueColour)
-                        chartData.infoDescription(info: point)
-                            .font(chartData.chartStyle.infoBoxDescriptionFont)
-                            .foregroundColor(chartData.chartStyle.infoBoxDescriptionColour)
+                        //chartData.infoDescription(info: point)
+                            //.font(chartData.chartStyle.infoBoxDescriptionFont)
+                            //.foregroundColor(chartData.chartStyle.infoBoxDescriptionColour)
                     }
                 }
             } else {
