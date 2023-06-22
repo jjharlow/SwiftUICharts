@@ -43,7 +43,7 @@ if chartData.chartStyle.infoBoxContentAlignment == .vertical {
                 //.foregroundColor(chartData.chartStyle.infoBoxDescriptionColour)
         }
     }
-}
+
             } else {
                 HStack {
                     ForEach(chartData.infoView.touchOverlayInfo, id: \.id) { point in
