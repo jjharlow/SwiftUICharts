@@ -29,11 +29,6 @@ internal struct TouchOverlayBox<T: CTChartData>: View {
         Group {
             if chartData.chartStyle.infoBoxContentAlignment == .vertical {
                 VStack(alignment: .leading, spacing: 0) {
-                    HStack {
-                        Spacer()
-                        Text("Validation Issues")
-                        Spacer()
-                    }
                     ForEach(chartData.infoView.touchOverlayInfo, id: \.id) { point in
                         HStack {
                             chartData.infoLegend(info: point)
@@ -42,6 +37,7 @@ internal struct TouchOverlayBox<T: CTChartData>: View {
                             chartData.infoValueUnit(info: point)
                                 .font(chartData.chartStyle.infoBoxValueFont)
                                 .foregroundColor(chartData.chartStyle.infoBoxValueColour)
+                            Text(" Issues")
                         }
                         //chartData.infoDescription(info: point)
                             //.font(chartData.chartStyle.infoBoxDescriptionFont)
