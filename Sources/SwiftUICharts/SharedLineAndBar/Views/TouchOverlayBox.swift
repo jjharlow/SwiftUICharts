@@ -42,6 +42,7 @@ internal struct TouchOverlayBox<T: CTChartData>: View {
                             chartData.infoDescription(info: point)
                                 .font(chartData.chartStyle.infoBoxDescriptionFont)
                                 .foregroundColor(chartData.chartStyle.infoBoxDescriptionColour)
+                                .padding(.leading,20)                                           
                     }
                 }
             } else {
